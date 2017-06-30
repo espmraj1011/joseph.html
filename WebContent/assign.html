@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Details</title>
+</head>
+<body>
+<div id="result"style="color:red">
+</div>
+	Name:<br>
+  		<input type="text" id="name" value="">
+ 		<br>
+ 	Age:<br>
+  		<input type="text" id="age" value="">
+  		<br>
+  	<button onclick="add()">Add</button>
+  	<button id="hide" onclick="hide()">Hide</button>
+  	<button id="show" onclick="show()">Show</button>
+  	<table id="datatable" style="width:30%">
+		<tr>
+			<th>Name</th>
+			<th>Age</th>
+			</tr>
+			</table>
+ <script>
+function add()
+{
+	var name=document.getElementById("name").value;
+
+	if(name==""){
+		alert ("Please enter the name");
+	}
+	var age=document.getElementById("age").value;
+	if(age==""){
+		alert ("Please enter the age")
+	}
+	validateName();
+}
+function validateName() 
+{
+   	var val= document.getElementById('name').value;
+   
+   	if (!val.match(/^[a-zA-Z]+$/)) 
+   	{
+       	alert('Only alphabets are allowed in Name');
+       	return false;
+   	}
+   	validateAge();
+   	return true;
+   	
+}
+
+function validateAge() 
+{
+  		var val= document.getElementById('age').value;
+  
+  		if (!val.match(/^[0-9]+$/)) 
+  		{
+  			document.getElementById("result").innerHTML="Only numerics are allowed in age "
+      		return false;
+  		}
+  		addDataToTable();
+  		return true;
+}
+
+function addDataToTable(){
+	var name= document.getElementById('name').value;
+	var age= document.getElementById('age').value;
+	
+	var tableContent = document.getElementById('datatable').innerHTML;
+	tableContent= tableContent +"<tr><td>"+name+"</td><td>"+age+"</td></tr>"
+	
+	document.getElementById('datatable').innerHTML = tableContent;
+	
+}
+function hide(){
+	 document.getElementById('datatable').style.visibility="hidden";
+	 document.getElementById('hide').style.visibility="hidden";
+	 document.getElementById('show').style.visibility="visible";
+}	
+function show(){
+	document.getElementById('datatable').style.visibility="visible";
+	 document.getElementById('show').style.visibility="hidden";
+	 document.getElementById('hide').style.visibility="visible";
+}
+
+</script>
+</body>
+</html>

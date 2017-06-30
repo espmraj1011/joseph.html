@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calendar</title>
+</head>
+<body>
+  Date:<br>
+  <input type="text" id="date" value="">
+  <br>
+  Month:<br>
+  <select id="month">
+    <option value="Select">Select</option>
+    <option value="Jan">January</option>
+    <option value="Feb">February</option>
+    <option value="Mar">March</option>
+    <option value="Apr">April</option>
+    <option value="May">May</option>
+    <option value="Jun">June</option>
+    <option value="Jul">July</option>
+    <option value="Aug">August</option>
+    <option value="Sep">September</option>
+    <option value="Oct">October</option>
+    <option value="Nov">November</option>
+    <option value="Dec">December</option>
+    </select>
+  <br>
+  Year:<br>
+  <input type="text" id="year" value="">
+   <button onclick="handlesubmit()">submit</button>
+  <script>
+function handlesubmit()
+{
+	var year=document.getElementById("year").value;
+
+	if(year==""){
+		alert ("Please enter the year");
+	}
+
+	var date=document.getElementById("date").value;
+	if(date==""){
+		alert ("Please enter the date");
+	}
+
+
+	var month=document.getElementById("month").value;
+	if(month=="Select"){
+		alert ("Please enter the month");
+	}
+	
+	validate();
+}
+
+function validate() 
+{
+    var val= document.getElementById('date').value;
+    
+    if (!val.match(/^[0-9]+$/)) 
+    {
+        alert('Only numerics are allowed');
+        return false;
+    }
+    
+    return true;
+}function validate() 
+{
+    var val= document.getElementById('year').value;
+    
+    if (!val.match(/^[0-9]+$/)) 
+    {
+        alert('Only numerics are allowed');
+        return false;
+    }
+    
+    return true;
+}
+</script>
+  <br><br>
+</body>
+</html>
