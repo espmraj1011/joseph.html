@@ -5,21 +5,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-<input type="text" id="username">
-<button onclick="handlesubmit()">submit</button>
-<span id="result">
-</span>
-<script>
-function handlesubmit()
-{
-	var name=document.getElementById("username").value;
-if(name==""){
-	alert("Please enter the name");
-}else{
-alert (name);
-document.getElementById("result").innerHTML="my name is "+name;
-}
-}
-</script>
+	<input type="text" id="username">
+	<button onclick="handlesubmit()">submit</button>
+	<span id="result"> </span>
+	<script>
+		function handlesubmit() {
+			var name = document.getElementById("username").value;
+			if (name == "") {
+				alert("Please enter the name");
+			} else {
+				alert(name);
+				document.getElementById("result").innerHTML = "my name is "
+						+ name;
+			}
+		}
+	</script>
 </body>
 </html>
